@@ -217,14 +217,17 @@ Plain language summary
 \section{Introduction}
 
 \section{Theory and methods}
+We consider a model in $\mathbb R^2$ comprised of a poroelastic fracture system embedded in a  background deemed impermeable for the frequencies of interest (Figure \ref{fig.1}). The fracture system consists of an infinite main horizontal fracture that is intersected by equally spaced vertical secondary fractures.
 
 We take a two-step approach
-to investigate the poroelastic effects that intersecting secondary fractures induce on fracture reflectivity at normal incidence. In the first step, we aim to quantify the effective viscoelastic behavior that is induced on the main fracture as a result of fracture to fracture FPD that, in turn, is promoted by a P-wave striking normally to the main fracture. To this end, we apply the  poro-to-viscoelastic homogenization procedure as proposed by \citeA{Sotelo2022} on 2D models similar to Figure (fig xx). This figure shows a sample $\Omega$ consisting of a main horizontal poroelastic fracture that is normally intersected by a secondary one that is also poroelastic. This fracture system is embedded in impermeable background. Then, for the reflectivity analysis, we consider simplified 1D models similar to Figure (figure xx) that only include the main fracture embedded in the  impermeable background, where the former is represented by a viscoelastic medium after the poro-to-viscoelastic homogenization. We disregard the effect of the secondary fractures because the mechanical and poroelastic impact of fractures parallel to the traveling P-wave can be deemed negligible. (fix this)
+to investigate the poroelastic effects that intersecting secondary fractures induce on a main  fracture reflectivity at normal incidence. In the first step, we quantify the effective viscoelastic P-wave modulus and the associated viscoelastic compliance of the main that results from the fracture to fracture FPD.
+
+ To this end, we apply the  poro-to-viscoelastic homogenization procedure as proposed by cite() on 2D models similar to Figure (fig xx). This figure shows a sample $\Omega$ consisting of a main horizontal poroelastic fracture that is normally intersected by a secondary one that is also poroelastic. This fracture system is embedded in impermeable background. Then, for the reflectivity analysis, we consider simplified 1D models similar to Figure (figure xx) that only include the main fracture embedded in the  impermeable background, where the former is represented by a viscoelastic medium after the poro-to-viscoelastic homogenization. We disregard the effect of the secondary fractures because the mechanical and poroelastic impact of fractures parallel to the traveling P-wave can be deemed negligible. (fix this)
 
 In the following, we describe in further detail these aforementioned steps.
 
 
-\subsection{Poroelastic-to-viscoelastic homogenization procedure}
+\subsection{Homogenization procedure}
 
 \subsubsection{Mesoscale fluid pressure diffusion}
 
@@ -235,23 +238,26 @@ In the following, we describe in further detail these aforementioned steps.
 }
 \label{fig.1}
 \end{figure}
-We assume a poroelastic fractured system in 2D as shown in Figure (xx)  that consists of an infinite main horizontal fracture that is normally intersected by equally spaced secondary fractures. This fracture network is embedded in impermeable background rock. Under this configuration, a P-wave traveling normally to the main fracture plane creates a wave-induced fluid flow (WIFF) between the main and secondary fractures. This occurs because the traveling wave increases the fluid pressure inside the main fracture that, in turn, promotes fluid flow into the connected secondary fractures to attain pressure equilibration. On the other hand, the viscoelastic representation of poroelastic media is valid for WIFF that occurs at sufficient low frequencies $f$, below Biot's characteristic frequency $f_B$  \cite{Biot1956, Dutta1979}
+We assume an incoming P-wave striking normally to the main fracture as shown  in figure \ref{fig.1}. This wave produces an increment of the pore pressure in the main fracture, which, in turn, equilibrates by inducing fluid flow towards the secondary fractures. For sufficient low frequencies, which are in general within the fracture frequency range, this fracture-to-fracture wave-induced fluid flow is driven by fluid pressure diffusion (FPD) \cite{Muller2010}.
+We are interested in FPD that occurs at mesoscale heterogeneities since this is particular relevant for seismic applications \cite{Pride2004, Muller2010}.
+Mesoscale heterogeneities refer to those with characteristic length-scales  $L_h$ larger than the pore scale $L_p$ but smaller than the wavelength $\lambda_w$. For the considered fracture system, the mesoscale heterogeneities are dictated by the characteristic sizes of the fractures, for instance, the length of the secondary fractures \cite{Rubino2014}.
+On the other hand, this FPD  mechanism is constrained to frequencies $f$ that are much lower than Biot's characteristic frequency $f_B$  \cite{Biot1956, Dutta1979}
 \begin{linenomath*}
 \begin{equation}\label{Eq.1}
 f_B= \frac{1}{2 \pi} \frac{\eta \phi}{ \rho_f \kappa S },
 \end{equation}
 \end{linenomath*}
-where $\phi$ is the porosity, $\kappa$  the static permeability, $\eta$, the fluid viscosity,  $\rho_f$ the fluid density, and $S$ the tortuosity of the pore space. For these frequencies,  WIFF well described by a fluid pressure diffusion (FPD) mechanism \cite{Dutta1979, Chandler1981, Norris1993}.
-For the typical frequencies used in seismic experiments, FPD occurs predominantly in the mesoscopic range \cite{Pride2004, Muller2010}. This scale refers to FPD that takes place between heterogeneites that are larger than the prevailing pore $L_p$ size but smaller than the wavelength $\lambda_w$. For the fracture system under study, the greatest heterogeneity size refers to the secondary fracture length $L^h$. Then, the aformentioned considerations regarding frequencies and scales constraining the poro-to-viscoelastic homogenization can be summarized as
+where $\phi$ is the porosity, $\kappa$  the static permeability, $\eta$, the fluid viscosity,  $\rho_f$ the fluid density, and $S$ the tortuosity of the pore space. The aformentioned considerations regarding frequencies and scales constraining mesoscale FPD can be summarized as
 \begin{linenomath*}
 \begin{equation}\label{Eq.2}
 \begin{split}
 f & \ll f_B\\
-L_p & \ll L^h\ll \lambda_w.
+L_p & \ll L_h\ll \lambda_w.
 \end{split}
 \end{equation}
 \end{linenomath*}
-The characteristic diffusion length $L_d$ of the FPD mechanism can be expressed as 
+
+It can be shown that the diffusion coefficient $D$ and the characteristic diffusion $L_d$ associated with FPD are \cite{Chandler1981, Norris1993}
 \begin{linenomath*}
 \begin{equation}\label{Eq.3}
 \begin{split}
@@ -261,10 +267,10 @@ The characteristic diffusion length $L_d$ of the FPD mechanism can be expressed 
 \end{split}
 \end{equation}
 \end{linenomath*}
-where $M$ is Biot’s fluid storage modulus, $H_d$ and $H$ are the drained and undrained plane-wave moduli, respectively, and $\omega$ is the angular frequency $\omega = 2 \pi f$. 
+where $M$ is Biot’s fluid storage modulus, $H_d$ and $H$ are the drained and undrained plane-wave moduli, respectively, and $\omega$ is the angular frequency $\omega = 2 \pi f$.        
 The required rock physical properties are calculated as
 \begin{linenomath*}
-\begin{equation}\label{Eq.7}
+\begin{equation}\label{Eq.4}
 \begin{split}
 & H_d = \lambda_d + 2 \mu, \\
 & H = H_d + M \alpha ^2, \\
@@ -276,15 +282,19 @@ The required rock physical properties are calculated as
 \end{linenomath*}
 where $\lambda_d$ is the the drained Lamé modulus, $\mu$ is the shear modulus, $\alpha$ is the Biot-Willis effective stress coefficient, $K_m$, $K_s$, and $K_f$ are the bulk moduli of the drained solid frame, the solid grains, and the pore fluid, respectively.
 
-The limiting FPD regimes are the unrelaxed and relaxed ones, respectively. They are controlled by the wave-frequency, the characteristic diffusion length $L_d$ and the characteristic size of the heterogeneities $L_m$ 
-The relaxed state occurs at sufficiently low frequencies, for which  $L_d \gg L_m$. In this regime, there is enough time for the pressure between the heterogeneities  to equilibrate. Conversely, the unrelaxed state occurs at sufficiently high frequencies, for which $L_d \ll L_m$ and, consequently, there is insufficient time for pressure equilibration to take place and, hence, the different parts of the PM are hydraulically isolated. A transition zone exists at intermediate frequencies for which $L_d \approx L_m$.
-This zone is associated with attenuation and dispersion of body waves due to viscous dissipation. The maximum dissipation energy is related to a characteristic transition frequency $f_c= \omega_c/2\pi$. Here, $\omega_c$ depends on the diffusion coefficient $D$ and the characteristic size of the heterogeneity $L_m$ \cite{White1975a,Muller2010}
+On the other hand, FPD is characterized by two limiting regimes, the relaxed and unrelaxed states, that are controlled by the wave-frequency, the characteristic diffusion length $L_d$ and the characteristic size of the heterogeneities $L_f$ 
+The relaxed state occurs at sufficiently low frequencies, for which  $L_d \gg L_h$. In this regime, there is enough time for the pressure between the main and secondary fractures to equilibrate. Conversely, the unrelaxed state occurs at sufficiently high frequencies, for which $L_d \ll L_h$ and, consequently, there is insufficient time for pressure equilibration to take place and, hence, the main and secondary fractures are hydraulically isolated. A transition zone exists at intermediate frequencies for which $L_d \approx L_h$ that is associated with attenuation and dispersion of body waves due to viscous dissipation. The maximum dissipation of energy is associated with a maximum a characteristic transition frequency $f_c= \omega_c/2\pi$, 
+which depends on the diffusion coefficient $D$ and the characteristic size of the heterogeneity $L_h$ \cite{Rubino2014}
 \begin{linenomath*}
-\begin{equation}\label{Eq.4}
-\omega_c \propto \frac{D}{(L_m)^2}.
+\begin{equation}\label{Eq.5}
+\omega_c \propto \frac{D}{(L_h)^2}.
 \end{equation}
 \end{linenomath*}
-To perform the poroelastic-to-viscoelastic homogenization, we take a square sample $\Omega$ from the fractured system shown in Figure (XXX). This sample contains part of the background rock and a repetitive portion of the fracture network that consist of the main fracture $\Omega_{p1}$ and the secondary fracture $\Omega_{p2}$ which is centered in the sample (Figure xx). The homogenization procedure described in more detail in the following, follows closely the one proposed by \citeA{Sotelo2022} that is suitable for homogenization of poroelastic regions in absence of a representative elementary volume (REV)
+
+The described FPD relaxation mechanism produces a viscoelastic behavior of the main fracture P-wave modulus and, consequently, of its normal compliance. 
+The frequency-dependent P-wave modulus of the  main fracture ca be estimated by solving \citeauthor{Biot1941}'s \citeyear{Biot1941} on a representative sample of the fractured model of Figure \ref{fig.1}, while applying a vertical compressional oscillatory test. This is 
+followed by the volume averaging of the vertical strain and stress components, which are then used to estimate the frequency dependent P-wave modulus. On the other hand, the viscoelastic characteric of the P-wave modulus due to FPD produces attenuation and dispersion of the associated P-wave, where the maximum attenuation occurs at the characteristic transition frequency $f_c$.
+
 
 \subsubsection{Governing equations}
 
@@ -295,11 +305,11 @@ To perform the poroelastic-to-viscoelastic homogenization, we take a square samp
 }
 \label{fig.2}
 \end{figure}
-We solve Biot's consolidation equations \cite{Biot1941} over the sample $\Omega$ only for the vertical compressional oscillatory relaxation (VCOR) test as detailed in equations
-\eqref{xx} and \eqref{xx}. We focus on this test because a P-wave striking normally the main fracture induces FPD that impacts only its plane-wave modulus $H(\omega)$ bestowing it a viscoelastic character.
+We solve Biot's consolidation equations \cite{Biot1941} over the sample $\Omega$  for the vertical compressional oscillatory relaxation test as detailed in Equations
+\eqref{Eq.8} and \eqref{Eq.9}. 
 We express these equations in the solid displacement - pressure ($\bm{u}-p$) formulation in the frequency domain \cite{Quintal2011,Favino2020},  with $\bm{u} = \bm{u}(\bm{x}, \omega)$ and $p = p(\bm{x},\omega)$, where $\bm{x} \in \Omega$ is the position  and $\omega \in F$ is the angular frequency, with $F =(0,W]$. 
 \begin{linenomath*}
-\begin{equation}\label{Eq.5}
+\begin{equation}\label{Eq.6}
 \begin{split}
 & - \nabla \cdot \, \bm{\sigma} =0  \quad  \textrm{in} \quad \Omega \times F,  \\
 & - i \, \alpha \nabla . \, \bm{u} -i \frac{p}{M} + \frac{1}{\omega} \,\nabla \, \cdot \, \left( \frac{\kappa}{\eta} \nabla p\right)  =0 \quad  \textrm{in} \quad \Omega \times F,
@@ -310,7 +320,7 @@ where $\bm{\sigma}$ is the total stress and $i$ is the imaginary unit.
 
 The constitutive equation relating the total stress $\bm{\sigma}$ to $\bm{u}$ and $p$ is
 \begin{linenomath*}
-\begin{equation}\label{Eq.6}
+\begin{equation}\label{Eq.7}
 \begin{split}
 & \bm{\sigma} =  2\mu \, \bm{\varepsilon} +  \left( \lambda_d \,  \tr( \bm{\varepsilon})\, - \alpha \,p \right) \bm{I}, \qquad \text{with}\\
 & \bm{\varepsilon} = \frac{1}{2} \left( \nabla \,\bm{u} + ({\nabla  \bm{u}})^T  \right),
@@ -320,68 +330,74 @@ The constitutive equation relating the total stress $\bm{\sigma}$ to $\bm{u}$ an
 where $\bm{\varepsilon}$ is the strain tensor and $\bm{I}$ the identity tensor. 
 
 
-\subsubsection{Vertical compressional oscillatory relaxation (VCOR) test}
-We assume a Cartesian coordinate system with the associated basis vectors $\bm{\hat x_1}$ and $\bm{\hat x_3}$ parallel to the horizontal and vertical axes, respectively.
-We also let the sample $\Omega$ be a quadrilateral with boundary $\Gamma = \{\Gamma_k^+,\Gamma_k^-\}$ and $k=\{1,3\}$. Here, for a fixed $k$, $\Gamma_k^+$ and $\Gamma_k^-$  represent opposite boundaries, 
-that is, $\Gamma_1^+$ and $\Gamma_1^-$ 
-refer to the boundaries with outer normal vectors $ + \bm{\hat n_1}$ and $- \bm{\hat n_1}$, respectively. Similarly, $\Gamma_3^+$ and $\Gamma_3^-$ refer to the boundaries with outer normal vectors $ + \bm{\hat n_3}$ and $- \bm{\hat n_3}$, respectively.
+\subsubsection{Vertical compressional oscillatory relaxation test}
+In this subsection, we detail the BC for the vertical oscillatory relaxation test. We assume a Cartesian coordinate system in $\mathbb R^2$ with the associated basis vectors $\bm{\hat x_1}$ and $\bm{\hat x_3}$ parallel to the horizontal and vertical Cartesian axes, respectively. We also
+let the sample $\Omega$ be a quadrilateral with boundary $\Gamma = \Gamma_1^+ \cup \Gamma_1^- \cup \Gamma_3^+ \cup \Gamma_3^- $, where $\Gamma_1^+ $ and $\Gamma_1^- $ are opposite boundaries with outer normal vectors $\bm{\hat x_1}$ and $ -\bm{\hat x_1}$, respectively. Similarly, $\Gamma_3^+ $ and $\Gamma_3^- $ are opposite boundaries with outer normal vectors $\bm{\hat x_3}$ and $ -\bm{\hat x_3}$ (Figure \ref{fig.2}). To simplify the notation, we let $ \bm{\hat n}$ be the outer normal vector
+of $\Gamma$.
 
-In the following, we define the BC for displacements, pressure, tractions and fluid flux relative to the solid, imposing periodicity to the respective variables on opposite boundaries for VCOR test.
-The BC for displacement are
+In the following, define the BC for displacements, pressure, tractions and fluid flux relative to the solid, imposing periodicity to the respective variables on opposite boundaries. 
+The BC for displacements are
+
 \begin{linenomath*}
 \begin{equation}\label{Eq.8}
 \begin{split}
-&  u_3 \, \vert_{\Gamma_3^-} - u_3 \, \vert_{\Gamma_3^+} =- \Delta u, \\
-&  u_1 \, \vert_{\Gamma_3^-} - u_1 \, \vert_{\Gamma_3^+} = 0, \\
-& u_k\,\vert_{\Gamma_1^+} - u_k \,\vert_{\Gamma_1^-} = 0,
+&  \bm{u} \cdot \bm{\hat{x}_3} \, \vert_{\Gamma_3^-} - \bm{u}\cdot \bm{\hat{x}_3}\, \vert_{\Gamma_3^+} =- \Delta u, \\
+&  \bm{u} \cdot \bm{\hat{x}_1}\, \vert_{\Gamma_3^-} - \bm{u} \cdot \bm{\hat{x}_1} \, \vert_{\Gamma_3^+} = 0, \\
+& \bm{u}\,\vert_{\Gamma_1^+} - \bm{u}\,\vert_{\Gamma_1^-} = \bm{0},
 \end{split}
 \end{equation}
 \end{linenomath*}
-where $\Delta u$ designates a displacement difference in the frequency domain that we assume to be real.
-Besides,  the respective BC for pressure, tractions and fluid flux relative to the solid are
+where $\Delta u$ is a real displacement difference in the frequency domain.
+
+The respective BC for pressure, tractions and fluid flux relative to the solid are
 \begin{linenomath*}
-\begin{equation}\label{Eq.11}
+\begin{equation}\label{Eq.9}
 \begin{split}
 & p\vert_{\Gamma_k^+}-p\vert_{\Gamma_k^-} =0, \\
-& \left(\bm{\sigma}\cdot \bm{\hat n_k} \right)\, \vert_{\Gamma_k^+}-\left(\bm{\sigma}\cdot \bm{\hat n_k} \right)\, \vert_{\Gamma_k^-} = \bm{0},\\
-&\left( \frac{\kappa}{\eta} \nabla p \cdot \bm{\hat n_k} \right) \, \vert_{\Gamma_k^+} -\left( \frac{\kappa}{\eta} \nabla p \cdot \bm{\hat n_k} \right) \, \vert_{\Gamma_k^-} = 0.
+& \left(\bm{\sigma}\cdot \bm{\hat n} \right)\, \vert_{\Gamma_k^+}-\left(\bm{\sigma}\cdot \bm{\hat n} \right)\, \vert_{\Gamma_k^-} = \bm{0},\\
+&\left( \frac{\kappa}{\eta} \nabla p \cdot \bm{\hat n} \right) \, \vert_{\Gamma_k^+} -\left( \frac{\kappa}{\eta} \nabla p \cdot \bm{\hat n} \right) \, \vert_{\Gamma_k^-} = 0,
 \end{split}
 \end{equation}
 \end{linenomath*}
+where the subscript $k$ in $\Gamma_k^-$ and $\Gamma_k^+$ takes the value of 1 or 3 at a time to denote opposite boundaries.
 
-\subsubsection{viscoelastic wave modulus and normal  compliance}
-After performing the VCOR test, we take the average of strain and stress  only over the poroelastic main fracture $\Omega_{p1}$ to obtain the viscoelastic modulus that pertain to this poroelastic medium of interest (PM). In the following, we outline this procedure.
+\subsubsection{Plane-wave modulus}
 
-We calculate, over the PM $\Omega_{p1}$, the average  of the stress components $\langle \sigma_{33} \rangle_{\Omega_{p1}}$ and of the respective strain components $\langle \varepsilon_{33} \rangle_{\Omega_{p1}}$. The corresponding average quantities $\langle \Box \rangle_{\Omega_{p1}}$ are computed as
+Here, we detail the calculations to obtain the plane-wave modulus and normal compliance of the main horizontal fracture.  To this end, we first take the average of  of the stress component $\langle \sigma_{33} \rangle_{\Omega_{p1}}$ and of the respective strain component $\langle \varepsilon_{33} \rangle_{\Omega_{p1}}$ only over $\Omega_{p1}$ (Figure \ref{fig.2}). The corresponding average quantities $\langle \Box \rangle_{\Omega_{p1}}$ are computed as
 \begin{linenomath*}
-\begin{equation}\label{Eq.12}
+\begin{equation}\label{Eq.10}
 \begin{split}
 &\langle \Box \rangle_{\Omega_{p1}} = \frac{1}{\vert \Omega_{p1} \vert} \int_{\Omega_{p1}} \Box \, d\Omega_{p1}, \qquad \text{with} \quad  \vert \Omega_{p1} \vert = \int_{\Omega_{p1}}  d\Omega_{p1}.
 \end{split}
 \end{equation}
 \end{linenomath*}
 
-Then we calculate the corresponding wave-plane modulus as
+Then, we calculate the main P-wave plane modulus as
 \begin{linenomath*}
-\begin{equation}\label{Eq.12}
+\begin{equation}\label{Eq.11}
 H(\omega)= \frac{\langle \sigma_{33} \rangle_{\Omega_{p1}}}{\langle \varepsilon_{33} \rangle_{\Omega_{p1}}}.
 \end{equation}
 \end{linenomath*} 
 
-Finally the fracture normal compliance $Z_N (\omega) $ can be obtained as follows
+Finally, we obtain the main fracture normal compliance $Z_N (\omega) $ as
 \begin{linenomath*}
 \begin{equation}\label{Eq.12}
-Z_N(\omega)= \frac{a^f}{H(\omega)}, 
+Z_N(\omega)= \frac{a_f}{H(\omega)}, 
 \end{equation}
 \end{linenomath*} 
-where $a^f$ is the aperture of the main fracture $\Omega_{P1}$.
+where $a_f$ is the aperture of the main fracture.
 
-\subsection {Normal fracture reflectivity}
-Since  we are interested in the FPD affects taking place on  the main fracture,  we simplify the model in Figure (figure) by disregarding  the secondary fractures. Furthermore, given that FPD effects are more relevant on the normal direction from the fracture plane,
-we consider a simplified 1-D model as in Figure (fig). In this model, the main fracture is represented by a viscoelastic layer $\Omega_v$ and is embedded in the same impermeable background  as in figure (XX)  $\Lambda_1$ and $\Lambda_2$, respectively.
-We assume a normally incident P-wave striking at the upper background-fracture interface $\Pi_1$. 
-Then, 
-our objective is to find the PP reflection coefficients $R_{PP}$ at this interface.
+On the other hand, the inverse of the P-wave attenuation coefficient $Q_P^{-1}$ is also related to the P-wave modulus and, as previously stated, its maximum value $max\, Q_P^{-1} $ occurs at the characteristic transition frequency $f_c$, which is associated with maximum energy dissipation. We express $Q_P^{-1}$ as
+\begin{linenomath*}
+\begin{equation}\label{Eq.13}
+Q_P^{-1}= \frac{\Im(1/H(\omega))}{\Re(1/H(\omega))}, 
+\end{equation}
+\end{linenomath*} 
+
+\subsection{Normal reflectivity of the main fracture}
+
+We consider a simplified  model in as shown in Figure \ref{fig.3}. In this model, the main fracture is represented by a viscoelastic layer $\Omega_v$ and is embedded in the same  half-spaces $\Lambda_1$ and $\Lambda_2$, respectively (Figure \ref{fig.1}).
+We also consider an incoming P-wave striking normally at the interface $\Pi_1$ between the upper half-space and the fracture. In the following, we detail the procedure to find the PP reflection coefficients $R_{PP}$ at this interface.
 
  \begin{figure}[!ht]
 \centering
@@ -392,17 +408,17 @@ our objective is to find the PP reflection coefficients $R_{PP}$ at this interfa
 \end{figure}
 
 \subsubsection{Governing equations}
-We formulate the elastic and viscoelastic wave equations in the space-frequency domain. Given that only P-wave propagates in  1-D media, we represent them as isotropic.
+We formulate the elastic and viscoelastic wave equations in the space-frequency domain. 
 
 For the elastic wave equation, we let $\bm{u}^e=\bm{u}^e (\bm{x},\omega)$ be the displacement vector for any position $\bm{x}$ $\in n$, with  $n= \{\Lambda_1, \Lambda_2\} $ and angular frequency  $\omega \in F$ , with $F =(0,W]$. We also let $\bm{\sigma}^e$ be the stress tensor field acting upon the medium. Then, we express the corresponding equation of motion as
 \begin{linenomath*}
-\begin{equation}\label{Eq.6}
+\begin{equation}\label{Eq.14}
 - \, \rho_b \,\omega^2 \, \bm{u}^e = \nabla . \, \bm{\sigma}^e \quad  \textrm{in} \quad n \times F.
 \end{equation}
 \end{linenomath*}
 The associated constitutive equation is given by: 
 \begin{linenomath*}
-\begin{equation}\label{Eq.7}
+\begin{equation}\label{Eq.15}
 \bm{\sigma}^e = \mu \,  \left( \nabla \, \bm{u}^e + ({\nabla  \bm{u}^e})^T  \right) + \lambda \,  \nabla . \, \bm{u}^e\,\, \bm{I},
 \end{equation}
 \end{linenomath*}
@@ -410,13 +426,13 @@ where $\lambda$ is the undrained Lamé modulus and is calculated as $\lambda = \
 
 For the viscoelastic wave equation, we let $\bm{u}^v=\bm{u}^v (\bm{x},\omega)$ be the displacement vector for any position $\bm{x}$  $ \in \Omega_v$ and angular frequency $\omega \in F$ , with $F =(0,W]$. We also let $\bm{\sigma}^v$ be the stress tensor field acting upon the medium. Then, we express the corresponding equation of motion as:
 \begin{linenomath*}
-\begin{equation}\label{Eq.6}
+\begin{equation}\label{Eq.16}
 - \, \rho_b \,\omega \, \bm{u}^v = \nabla . \, \bm{\sigma}^v \quad \textrm{in} \quad \Omega_v \times F.
 \end{equation}
 \end{linenomath*}
 The associated constitutive equation is given by: 
 \begin{linenomath*}
-\begin{equation}\label{Eq.7}
+\begin{equation}\label{Eq.17}
 \begin{split}
 & \bm{\sigma}^v = \mu \,  \left( \nabla \, \bm{u}^v + ({\nabla  \bm{u}^v})^T  \right) + \lambda(\omega) \,  \nabla . \, \bm{u}^v\,\, \bm{I}, \quad \text{with} \\
 & \lambda(\omega)= H(\omega)-2\mu.
@@ -424,65 +440,64 @@ The associated constitutive equation is given by:
 \end{equation}
 \end{linenomath*}
 
-Notice that in the constitutive equation (eqution xx) $\mu$ is not frequency dependent. This is because the shear modulus of the fracture is not affected by FPD. 
-
 \subsubsection{Solution for displacements}
-We assume that a P-wave propagates downwards and strikes normally the elasti-viscoelastic interface $\Pi_1$ (Figure xxx). 
-Then, only P-waves propagate vertically in both the elastic and the viscoelastic media. Moreover, P-waves present a dispersive nature in the latter.
-Consequently, the only non-zero component of the displacement vectors is in $\bm{\hat x_3}$.
-Then, to find the total displacements at each medium, we sum the corresponding displacements produced by the P-waves traveling in the given medium $\Lambda_m$.
+As stated, we assume an incoming P-wave strikes normally the interface $\Pi_1$  between the upper half-space and the fracture (Figure \ref{fig.3}), which are represented by elastic and poroelastic media, respectively. As a consequence, only P-waves propagate vertically in both half-spaces and in the fracture. Then, to find the total displacement in each medium we sum the corresponding ones produced by the upgoing and downgoing P-wave, respectively.
 
-For the elastic medium $n$, we let $u_n^e$ be the total displacement. When $n=\Lambda_1$ the expression for $u_n^e$ is
+For the elastic half-spaces $n =\{\Lambda_2, \Lambda_2\}$, we let $u_n^e$ be the corresponding total displacements, which are calculated as
 \begin{linenomath*}
-\begin{equation}\label{Eq.8}
-u_n^e=  u_{n\,{D_P}}^e + u_{n\,{U_P}}^e, 
+\begin{equation}\label{Eq.18}
+\begin{split}
+& u_n^e=  u_{n\,{D_P}}^e + u_{n\,{U_P}}^e \quad \text{when}\, n=\Lambda_1 , \, \text{or}  \\
+& u_n^e = u_{n\,{D_P}}^e \quad \text{when}\, n=\Lambda_2 ,
+\end{split}
 \end{equation}
 \end{linenomath*}
-where $D$ and $U$ refer to the downgoing and upgoing waves, respectively, and the subscript $P$ refers to the P-wave. Since in the lower half-space $\Lambda_2$ there are no upgoing-waves, $u_n^e$ simplifies to:
-\begin{linenomath*}
-\begin{equation}\label{Eq.8.1}
-u_n^e = u_{n\,{D_P}}^e.
-\end{equation}
-\end{linenomath*}
+where $D$ and $U$ refer to the downgoing and upgoing waves, respectively, and the subscript $P$ refers to the P-wave.
+% Since in the lower half-space $\Lambda_2$ there are no upgoing P-wave, $u_n^e$ simplifies to:
+%\begin{linenomath*}
+%\begin{equation}\label{Eq.18}
+%u_n^e = u_{n\,{D_P}}^e.
+%\end{equation}
+%\end{linenomath*}
 
 Then, we express the corresponding solution $u_{n\,j}^e$ for each elastic medium $n$ = $\Lambda_1$ and $\Lambda_2$, with $j$ = $D_P$ or $U_P$, as
 \begin{linenomath*}
-\begin{equation}\label{Eq.10}
+\begin{equation}\label{Eq.19}
 u_{n\,j}^e = E_{n \,j} \;\exp[ \pm\; i \; k_{n}^e \; x_3 ]\,,
 \end{equation}
 \end{linenomath*}
-where $E_{n \,j}$ is the amplitude of the corresponding elastic displacement and $x_3$ is the position. Negative and positive signs in the exponential correspond to downgoing and upgoing waves, respectively, $ k_{n}^e$ is the elastic scalar wavenumber for the P-wave in medium $n$, calculated as $ k_{n}^e$ = $\omega / V_P^n$, where $V_P^n$ is the P-wave velocity of medium $n$. 
-The corresponding $V_P^n$ is
-\begin{linenomath*}
-\begin{equation}\label{Eq.12}
-V_P^n = \sqrt{\frac{\lambda^n +  2\, \mu^n}{\rho_b^n}}.
-\end{equation}
-\end{linenomath*}
+where $E_{n \,j}$ is the amplitude of the corresponding elastic displacement and $x_3$ is the position. Negative and positive signs in the exponential correspond to downgoing and upgoing waves, respectively, $ k_{n}^e$ is the elastic scalar wavenumber for the P-wave in medium $n$, calculated as $ k_{n}^e$ = $\omega / V_P^n$, where $V_P^n$ is the P-wave velocity of medium $n$, with $V_P^n = \sqrt{(\lambda^n +  2\, \mu^n)/\rho_b^n}$
+%The corresponding $V_P^n$ is
+%\begin{linenomath*}
+%\begin{equation}\label{Eq.20}
+%V_P^n = \sqrt{\frac{\lambda^n +  2\, \mu^n}{\rho_b^n}}.
+%\end{equation}
+%\end{linenomath*}
 
 For the viscoelastic medium $\Omega_v$, we let  $u^v$ be the total viscoelastic displacement given by 
 \begin{linenomath*}
-\begin{equation}\label{Eq.8}
+\begin{equation}\label{Eq.20}
 u^v=  u_{\,D_P}^v  + u_{\,U_P}^v.
 \end{equation}
 \end{linenomath*}
 
 Then, we express the solution of the corresponding displacement $u_j^v$, with $j = D_P , U_P$ as
 \begin{linenomath*}
-\begin{equation}\label{Eq.11}
+\begin{equation}\label{Eq.21}
 u_j^v = V_j \;\exp[ \pm\; i \; k^v \; x_3 ]\,,
 \end{equation}
 \end{linenomath*}
-where $V_j$ is the amplitude of the corresponding viscoelastic displacement, $ k^v$ is the viscoelastic scalar wavenumber for the P-wave calculated as $ k^v=\omega / V_P(\omega)$, where $V_P(\omega)$ is the frequency-dependent P-wave velocity that is computed as
-\begin{linenomath*}
-\begin{equation}\label{Eq.12}
-V_P(\omega) = \sqrt{ \frac{H(\omega) }{\rho_b} }.
-\end{equation}
-\end{linenomath*}
+where $V_j$ is the amplitude of the corresponding viscoelastic displacement, $ k^v$ is the viscoelastic scalar wavenumber for the P-wave calculated as $ k^v=\omega / V_P(\omega)$, where $V_P(\omega)$ is the frequency-dependent P-wave velocity that is computed as $V_P(\omega) = \sqrt{H(\omega) /\rho_b }$
+%\begin{linenomath*}
+%\begin{equation}\label{Eq.23}
+%V_P(\omega) = \sqrt{ \frac{H(\omega) }{\rho_b} }.
+%\end{equation}
+%\end{linenomath*}
 
 \subsubsection{PP reflection coefficients}
-We assume that the amplitude of the incident P-wave is one, then the reflection coefficient $R_{PP}$ at the upper half-space is equal to $E_{\Lambda_1\, UP}$ (equation xx). To solve for the unknown amplitudes,  we assemble a set of equations by imposing continuity of displacements and tractions at the elastic-viscoelastic interfaces $\Pi_q$ with $q=1,2$
+We assume that the amplitude of the incident P-wave is one, then the reflection coefficient $R_{PP}$ at the upper half-space is equal to $E_{\Lambda_1\, UP}$ (Equation \eqref{Eq.18}). To solve for the unknown amplitudes,  we assemble a set of equations by imposing continuity of displacements and tractions at the elastic-viscoelastic interfaces $\Pi_q$, respectively, with $q=1,2$
 \begin{linenomath*}
-\begin{equation}\label{Eq.x}
+\begin{equation}\label{Eq.22}
 \begin{split}
 &  \left. \left(  u_n^e -  u^v \right) \right \rvert_{\Pi_q} = 0 \,, \\
 &  \left. \left( t_n^e  - t^v  \right) \right \rvert_{\Pi_q} = 0 \,.
@@ -494,20 +509,13 @@ $t^v =( \bm{\sigma}^v \cdot \bm{\hat {x}_3})\cdot \bm{\hat {x}_3} $, respectivel
 
 \section{Results}
 
-In the following we present a sensitivity analysis where we vary the geometrical and physical properties of the secondary fractures to investigate how these changes impact the normal compliance and reflectivity of the infinite horizontal fracture. We compare these results against those obtained using a model that only includes the main fracture embedded in impermeable background. In this latter model,  the fracture behaves as an elastic one since the saturating fluid cannot exit. Then, we can calculate its normal undrained compliance $Z^f_{N}$ assuming an unrelaxed FPD regime:
-\begin{linenomath*}
-\begin{equation}\label{Eq.x}
-Z^f_{N}= a^f/H^f 
-\end{equation}
-\end{linenomath*}
-where the upper script $f$ refers to the main fracture.
+In the following we present a sensitivity analysis where we vary the geometrical and physical properties of the secondary fractures to investigate their impact on the normal compliance and reflectivity of the main fracture. 
+We compare the  results against those obtained using a model that considers only the main fracture embedded in impermeable background. In this model the fracture presents an undrained behavior because it is hydraulically isolated.
 
-
-Table (table xx) and Table (xx) show the reference rock and physical properties for the main and secondary fractures,  the impermeable background and the pore fluids, respectively. Most if these properties are used as input parameters for the homogenization procedure except the grain density that is used to calculate $V_P$ velocities (Equation xxx). Unless otherwise stated, we assume that both fractures are water-saturated.
-Additionally, the sample size for the oscillatory test is kept constant to 0.8 m $\times$ 0.8 m.
+Table \ref{table.1} and Table \ref{table.2} show the reference rock and physical properties for the main fracture, secondary fractures, the impermeable half-spaces and the pore fluids, respectively. Unless otherwise stated, we assume that both fractures are water-saturated. Besides, to obtain both the frequency-dependent P-wave modulus and normal compliance of the main fracture for the different tested models,  we apply the homogenization procedure described in the Methodology section using a square sample $\Omega$ (Figure \ref{fig.2}) with a side length of 0.8 m. On the other hand, as previously stated, the poroelastic-to-viscoelastic homogenization is valid for frequencies that are below Biot's characteristic frequency (Equation \eqref{Eq.1}). The corresponding values for the main and secondary fractures are 1.3 KHz and 12.9 KHz, respectively, which are below the seismic frequency range.
 
 \begin{table}[!ht]
-  \caption{Reference values of the physical properties for the Main and secondary fracture, annd background rocks (Figure xx ). }
+  \caption{Reference values of the physical properties for the main fracture, secondary fractures, and the background, respectively (Figure \ref{fig.1}). }
 \begin{center}
   \begin{tabular}{ | l c  c  c | }
     \hline
@@ -541,18 +549,25 @@ Additionally, the sample size for the oscillatory test is kept constant to 0.8 m
   \label{table.2}
 \end{center}
 \end{table}
-To show the results regarding normal compliance we prefer to present plots of the ratio between the frequency-dependent normal fracture compliance $Z_N (\omega)$ and the undrained normal compliance $Z^f_{N}$. This is $Z_N\, \text{ratio}=Z_N (\omega)/ Z^f_{N}$.
-This presentation is convenient because it shows the folds that $Z_N (\omega)$ increases with respect to its undrained normal compliance which is the minimum value that this property can take. Using the properties for the main fracture in Table xx, we  find that $Z^f_{N} =3.6 \times 10 ^{-13}$  m/Pa. On the other hand, the drained normal compliance ($Z^f_{Nd}$) determines the maximum value that this property can take and it can be calculated as
-$Z^f_{Nd}= a^f/H_d^f$. Using again the properties for the main fracture in Table xx, we find that $Z^f_{Nd} =1.5\times 10^{-10} $ m/Pa. Then, the maximum folds that the fracture normal compliance can increase from its undrained value is  $Z_N^{max}\, \text{ratio}=416.5$. This signifies that the ratio presented in the plots can be as maximum equal to $416.5$.
+We present the plots of the frequency-dependent fracture normal compliance $Z_N (\omega)$ as a ratio ($Z_N\, \text{ratio}$) against its undrained value $Z^u_{N}$. This is $Z_N\, \text{ratio}=Z_N (\omega)/ Z^u_{N}$, where the undrained normal compliance  $Z^u_{N}$ designates the minimum value that $Z_N (\omega)$ can take. Using the properties for the main fracture from Table \ref{table.1}, we  find that $Z^u_{N} =3.6 \times 10 ^{-13}$  m/Pa. On the other hand, the drained normal compliance $Z^d_{N}$ denotes maximum value that $Z_N (\omega)$ can take, which we calculate as:
+$Z^d_{N}= a_f/H_d$. Using again the properties for the main fracture from Table \ref{table.1}, we find that $Z^d_{N} =1.5\times 10^{-10} $ m/Pa. Then, the maximum value than the ratio $Z_N\, \text{ratio}$  can take happens when  $Z_N (\omega) = Z^d_{N} $, which yields 416.5. Besides,
+we estimate the associated characteristic frequency $f_c$ by finding the frequency for which the P-wave attenuation reaches its maximum ($max\, Q_P^{-1}$), where $Q_P^{-1}$ is calculated using Equation \eqref{Eq.13}.
 
 
+\subsection{Sensitivity to the geometrical properties of the secondary fractures}
+In this subsection, we investigate the sensitivity of the main fracture normal compliance and of its reflectivy response to the variation of the geometrical properties of the secondary fractures, such as length $L^h$, aperture $a^h $ and spacing $s^h$, respectively. To perform this sensitivity analysis, we modify one parameter at a time by halving subsequently its value from its reference one as shown in Table \ref{table.1} for a total of an eight-fold decrease.
 
-\subsection{Sensitivity to secondary fracture geometrical properties}
+Figure \ref{fig.4} presents the $Z_N\, \text{ratio}$ as a function of frequency for the different geometrical parameters of the secondary fractures. The results show that there is an increase of the normal compliance of the main fracture with respect to its undrained value ( $Z_N\, \text{ratio}$ =  1) as a consequence of FPD prevailing in regimes other than the unrelaxed one between the main and secondary fractures. In particular, we observe that all curves present a similar behavior with respect to the frequency. This is, at sufficient low frequencies 
+%For instance, the maximum  $Z_N\, \text{ratio}$ is 67.5 for the reference properties of the secondary fractures listed in Table \ref{table.1} (e.g., Figure \ref{fig.4}a and curve $L^h$ = 0. 76 m).
+$Z_N\, \text{ratio}$ shows a constant maximum as a consequence of FPD prevailing in the relaxed regime. Then, as frequency increases it decreases monotonically towards its undrained value.
+Nonetheless, the sensitivity to their different geometrical properties is not the same.
+According to the results, the changes in normal compliance of the main fracture is the most sensitive to variations of the length $L^h$ of secondary fractures (Figure \ref{fig.4}a) and is the least sensitive to variations in their spacing $s^h$ (Figure \ref{fig.4}c). An intermediate sensitivity is associated to variations of their aperture $a^h$ (Figure \ref{fig.4}b). Specifically, the maximum $Z_N\, \text{ratio}$ shows a 35.5-fold increase, from 1.9 to 67.5, for the corresponding eight-fold increase in length $L^h$. Then, the maximum  $Z_N\, \text{ratio}$ increases close to four-folds, from 17.5 to 67.5, for a similar aperture $a^h$ increase of eight-fold. Finally, the maximum $Z_N\, \text{ratio}$  presents the lowest increase of 1.7-folds, from 67.5 to 113.4, in response to the eight-fold decrease in spacing $s^h$. On the other hand, the parameters tested impact in different degrees the characteristic transition frequency $f_c$. For instance, $f_c$ shows the highest sensitivity to changes in length $L^h$ of the secondary fractures (Figure \ref{fig.4}a), taking decreasing values from $\sim$ 1.0 KHz to $\sim$ 6.3 Hz as the length $L^h$ increases. In contrast, $f_c$ is the least sensitive to changes in the aperture $a^h$ of the secondary fractures (Figure \ref{fig.4}b). In this case $f_c$, takes increasing values from  $\sim$ 2.5 Hz to  $\sim$ 6.3 Hz as the aperture $a^h$ increases. Finally, $f_c$ presents an intermediate sensitivity to the spacing $s^h$ of the secondary fractures (Figure \ref{fig.4}c), where $f_c$ decreases from  $\sim$ 25.1 Hz to  $\sim$ 6.3 Hz with increasing spacing.
 
+On the other hand, the previously described sensitivity of normal fracture compliance and transition frequency to variations of the geometrical properties has also an impact on the PP reflectivity of the main fracture at normal incidence. In this regard, Figure \ref{fig.5} shows the absolute value of PP as a function of frequency for the same geometrical parameters of the secondary fractures presented in Figure \ref{fig.4}. We observe that for all the cases tested, the PP reflectivity of the main fracture increases from its elastic value as a consequence of FPD occurring between the main and secondary fractures. Specifically, all curves show a similar pattern with respect to frequency. This is, for sufficient low frequencies the reflectivity has a maximum constant increase from the elastic reference as a consequence of FPD occurring in the relaxed regime. Then, as frequency increases, the reflectivity decrease towards the elastic value in response to the prevailing transition FPD regime. Regarding the sensitivity of the main fracture reflectivity to changes in geometrical properties of the secondary fractures, the results show that it presents a similar behavior as the one described for its normal compliance. This is, its reflectivity at normal incidence is the most sensitive to changes in length $L^h$, then aperture $a^h$ and finally to spacing $s^h$. Specifically, the maximum increase of reflectivity is around two orders of magnitude for an eight-fold increment in the length $L^h$, from 0.095 m to 0.76 m. However, For a similar eight-fold increase in aperture $a^h$, from 0.125 mm to 1 mm, the maximum increase of the corresponding reflectivity is only around one order of magnitude. Finally the maximum increase of reflectivity is within the same order of magnitude for an eight-fold decrease in spacing $s^h$.
 
  \begin{figure}[!ht]
 \centering
-        \includegraphics[ width=100mm, height=85mm]{sensitivityZN_geometry.eps}
+        \includegraphics[ width=110mm, height=120mm]{sensitivityZN_geometry.eps}
 \caption{
 }
 \label{fig.4}
@@ -560,7 +575,7 @@ $Z^f_{Nd}= a^f/H_d^f$. Using again the properties for the main fracture in Table
 
  \begin{figure}[!ht]
 \centering
-        \includegraphics[ width=100mm, height=85mm]{sensitivityRPP_geometry.eps}
+        \includegraphics[ width=100mm, height=120mm]{sensitivityRPP_geometry.eps}
 \caption{
 }
 \label{fig.5}
@@ -568,7 +583,8 @@ $Z^f_{Nd}= a^f/H_d^f$. Using again the properties for the main fracture in Table
 
 
 
-\subsection{Sensitivity to secondary fracture physical and saturating fluid properties}
+\subsection{Sensitivity to the physical properties of the secondary fractures}
+In this subsection, we investigate the sensitivity of the main fracture normal compliance and of its reflectivy response to the variation of physical  properties of the secondary fractures, such as their bulk $K_m^h$ and shear $\mu^h$ moduli, respectively, permeability $\kappa^h $ and fluid content $fluid^h$, respectively. To perform this sensitivity analysis, we modify one parameter at a time, taking as the reference values the ones specified in Table \ref{table.1}. For the case of the sensitivity to the mechanical moduli, we doubled the bulk modulus $K_m^h$ each time, keeping the ratio $K_m^h/ \mu^h =2$. To investigate the sensitivity to the permeability $\kappa^h$, we take increments in permeability of one order of magnitude from 0.1 D to 100 D. Finally, to study the sensitivity to the fluid content $fluid^f$, we compare the results of either considering water or gas as the saturating fluid of the secondary fractures.
 
  \begin{figure}[!ht]
 \centering
@@ -586,8 +602,70 @@ $Z^f_{Nd}= a^f/H_d^f$. Using again the properties for the main fracture in Table
 \label{fig.7}
 \end{figure}
 
+Figure \ref{fig.6}, presents the resulting $Z_N\, \text{ratio}$ as a function of frequency for the different physical parameters of the secondary fractures. As previously stated, these results also show that there is an overall increase of the normal compliance of the main fracture associated FPD with the secondary fractures for frequencies that are within the transition frequency and lower. Nonetheless, the sensitivity of the normal fracture compliance to variations of the tested physical properties present different outcomes. In this regard, the maximum  $Z_N\, \text{ratio}$ shows an increase 
+of close to four-folds, from 17 to 67.5, corresponding to an eight-fold decrease in the bulk modulus $K_m^h$, from 0.128 GPa to 0.016 GPa (Figure \ref{fig.6}a). In contrast, the maximum  $Z_N\, \text{ratio}$ is not sensitive at all to variations in permeability, showing the same maximum value of 67.5 for all the tested permeabilities (Figure \ref{fig.6}b). We remark that for a permeability of 0.1 D, it is not possible to observe this maximum value because it occurs at a lower frequency than 0.1 Hz.
+Finally, the maximum  $Z_N\, \text{ratio}$ increases close to two-folds, from 67.5 to 129.3, when considering gas instead of water as the saturating fluid in the secondary fractures (Figure \ref{fig.6}c). Regarding the sensitivity of the characteristic transition frequency $f_c$,  results show that $f_c$ increases from $\sim$ 6.3 Hz to $\sim$ 15.8 Hz as the bulk moduli $K_m^h$ increases. For the permeability $\kappa$, we disregard the first value of 0.1 D. Then, we observe that $f_c$ increases from $\sim$ 0.6 Hz to $\sim$  39.8 Hz as the permeability $\kappa^h$ increases. Finally, $f_c$ also increases from $\sim$ 6.3 Hz to $\sim$ 25.1 Hz when the saturating fluid $fluid^h$ changes from water to gas.
+
+
+Next, \ref{fig.7} shows the corresponding sensitivity of the absolute value of PP reflectivities of the main fracture at normal incidence to the variations of the same parameters of the secondary fractures previously considered (Figure \ref{fig.6}). Overall, the results show that there is a maximum increase of the main fracture reflectivity of around two orders of magnitude with respect to its elastic value due to FPD with the secondary fractures. However, as already stated, its sensitivity to the tested physical 
+properties of the secondary fractures is different. For an eight-fold decrease of bulk modulus $K_m^h$, the reflectivity shows a maximum increase of around one order of magnitude. In contrast, there are not changes of the maximum increase of reflectivity due to changes in permeability. Finally, considering gas instead of water as the saturating fluid produces an increase of reflectivity within the same order of magnitude.
 
 \section{Discussion}
+\subsection{sensitivities of the relaxed normal fracture compliance and  characteristic transition frequencies}
+In this subsection we provide a general analysis about the effect of the geometrical and physical properties has on the of the main fracture normal compliance on its relaxed states and on the characteristic transition frequencies $f_c$. To this end, Figure \ref{fig.8} presents the $Z_N$ ratio corresponding to the FPD relaxed regime prevailing between the main and secondary fractures (relaxed $Z_N$ ratio)
+with respect to the characteristic frequencies $f_c$ for every of the previous tested properties of the secondary fractures. The  $Z_N$ ratio in the relaxed  FPD state reflects the maximum increase that the normal fracture compliance can attain with respect to its undrained value for a given set of secondary fracture parameters (Figures \ref{fig.4} and  \ref{fig.6}).
+These results show that, overall, the relaxed $Z_N ratio $ is the most sensitive to changes in the length $L^h$ of the secondary fractures, which presents a 35.6 fold increase for an eight fold increase of the length $L^h$.  This suggest that longer secondary fractures promote higher pressure gradients and provide greater pore volumes that enable the increase of the normal compliance of the main fracture as greater volumes of pore fluid flow towards the secondary fractures. Next, the changes in the bulk moduli $K_m^h$  and  in the aperture $a^h$  of the secondary fractures have similar impacts on the sensitivity of the relaxed  $Z_N$ ratio. This is, an eight fold decrease in the bulk modulus and a similar increase in the aperture produce around of a four fold increase in the corresponding relaxed $Z_N$ ratio, respectively. This implies that more deformable and wider secondary fractures can accommodate for more pore fluid from the main fracture as FPD takes place. Nonetheless, we remark that event though the changes in aperture reflect similar pore volume variations as those created by changes in the length, the corresponding relaxed $Z_N$ ratio sensitivity is much lower than that associated to the length of the secondary fractures. We suggest that this difference can be explained by the lower pressure gradients that variations in aperture produce in contrast to those induced by changes in length, which, in turn, results in a stiffer normal compliance of the main fracture as less fluid volume is drained to equilibrate its pore pressure with the secondary fractures. 
+Then the spacing $s^h$ of the secondary fractures has a much lower impact than the aforementioned parameters on the sensitivity of the relaxed $Z_N$ ratio, where an eight-fold decrease of spacing produces close to a two-fold increase in the relaxed $Z_N$ ratio. Notice that decreasing spacing does not increase monotonically the relaxed $Z_N$ ratio. Specifically, the relaxed  $Z_N$ ratio increases with decreasing spacing achieving its maximum value for a spacing of 0.2 m then it decreases for the last tested value of spacing of 0.2 m. 
+
+
+ \begin{figure}[!ht]
+\centering
+        \includegraphics[ width=150mm, height=85mm]{sensitivity_summary.eps}
+\caption{
+}
+\label{fig.8}
+\end{figure}
+
+
+
+
+\subsection{Effect of interconnected properties of the secondary fractures }
+In the Results section we have tested the sensitivity of the compliance and reflectivity of the main fracture to the variation of several properties of the secondary fractures. For such case, the property of interest was modified at a time, while the 
+others were kept constant. In contrast to the aforementioned analysis, in the following we assume that the properties of the secondary fractures are not independent but they are linked to their length directly or indirectly. This approach attempts to honor studies that show that the geometrical properties of fractures such their length and aperture are inter-related and that they can further be linked to their physical properties such as their permeability and bulk modulus. For our study, we use a power law  to relate the aperture $a^h$ to the length $L^h$ of the secondary fractures \cite<e.g.,>{Hatton1994}. This is $a^h = c_1 \, (L^h) ^{d_1}$, where $c_1$ = $10^{-2.9}$, $d_1$ = 1.49, respectively, which are values very similar to those suggested by \citeA{Hatton1994} for fractures with lengths smaller than 3 m. Likewise, we associate the permeability $\kappa^h$ of the secondary fractures to their hydraulic aperture $H^h$ through  the relationship \cite{Zimmerman1996,Jaeger2009}: $\kappa^h=(H^h)^2/12$, where the hydraulic aperture is related to the arithmetic mean aperture of the secondary fractures as \cite{Renshaw1995, Jaeger2009}: $(H^h)^3=(a^h)^3 ( 1 + r^2)^{-1.5}$. Here we assume that the  previously estimated aperture $a^h$ is the arithmetic mean aperture of the secondary fractures. Besides $r$ is the ratio between the corresponding standard deviation and the mean aperture, which we assume equal to 25. Similarly, it is also possible to relate the bulk $K_m^h$ and shear $\mu^h$ moduli of the secondary fractures to their drained normal $Z_N^h$ and tangential $Z_T^h$ compliances \cite{Nakagawa2007,Rubino2014}: $\mu^h = a^h/Z_T^h$ and $K_m^h =a^h/Z_N^h -4 \, a^h/(3\,Z_N^h)$, where the normal compliance of the secondary fractures can be further related to their length by a power law relationship  $Z_N^h = c_2 \, (L^h) ^{d_2}$, with $c_2$ = $10^{-10.8}$ and $d_2$ =0.77, respectively. This specific curve follows the trend of the data presented in \citeA{Barbosa2019}. Notice that the relationships for estimating the aperture and permeability of the secondary fractures show a monotonically increasing trend with respect to their length and aperture, respectively. The relationships to estimate the respective shear and bulk moduli have a similar behavior but no with respect to a single variable but with respect to the ratio  of the aperture to the tangential and drained normal compliance. Consequently, the moduli are related to the aperture and the compliances in an opposing fashion.
+Table \ref{table.3} summarizes the geometrical and physical properties found after considering three different secondary fracture lengths: 0.19 m, 0.38 m and 0.76 m, respectively. Other properties are assumed to be the same for all cases and correspond to those listed in Table \ref{table.1}.  As expected, the estimated apertures and permeabilities of the secondary fractures increase with their length. A similar behavior is observed for the bulk and shear moduli, but, as explained, their increase correlates to the ratio of the aperture to the respective tangential and drained normal compliance.  For reference,  Table \ref{table.3} also presents the estimated normal and tangential compliance of the secondary fractures, which show an increasing compliant behavior with increasing length of the secondary fractures increases. Besides, we assume that both the main and secondary fractures are water saturated, where the properties of the water are those presented in Table \ref{table.2}.
+
+
+\begin{table}[!ht]
+  \caption{ Properties of the secondary fractures related to their length }
+\begin{center}
+  \begin{tabular}{ | l c  c  c | }
+    \hline
+    Property  & \multicolumn{3}{c |}{Secondary fracture ($h$)} \\ 
+    \hline
+    Length $L$ (m) & 0.19 & 0.38 & 0.76  \\
+    Aperture $a$ (m) & 1.e-4 & 3.e-4 & 8.e-4\\
+    Permeability $\kappa$ (D) & 1.5 & 12.0 & 94.4\\
+    Frame bulk modulus $K_m$ (GPa)  & 0.013 & 0.021 & 0.035 \\ 
+    Frame shear modulus $\mu$ (GPa) & 0.0084 & 0.014 & 0.023\\
+    Normal compliance $Z_N$ (m/Pa)  & 4.4e.-12 & 7.5e-12 & 1.3e-11 \\
+    Tangential compliace $Z_T$ (m/Pa) & 1.3e-11 & 2.1e-11 & 3.7e-11 \\
+    
+    \hline
+  \end{tabular}
+  \label{table.3}
+\end{center}
+\end{table}
+
+Figure \ref{fig.9} shows the impact that the three different sets of properties of the secondary fractures (Table \ref{table.3}) has on the  main fracture normal compliance (Figure \ref{fig.8}a) and on the corresponding PP reflectivity (Figure \ref{fig.9}a) at normal incidence, respectively. Regarding effects on the main fracture compliance, Figure \ref{fig.9}a shows that the maximum $Z_N ratio$ takes increasingly higher values of  2.6, 9.2 and 36.4 as the length $L^h$ of the secondary fractures increases. This behavior suggest that, for this example, it is the length of the secondary fractures that controls the FPD process, as longer secondary fractures generate higher pressure gradients and provide greater pore volumes that permit the drainage of higher volumes of the saturating fluid from the main fracture, which in turn, increases the main fracture normal compliance. This further implies that this process dominates the opposite tendency that the higher stiffness of longer secondary fractures induces (Figure \ref{fig.7}a). Regarding, the transition frequency $f_c$, we observe a dominance of the effect of the  higher permeability of longer secondary fractures, since it promotes an increase of $f_c$ , which is similar to the effect observed in Figure \ref{fig.7}b. This outcome further implies that the tendency of that longer secondary fractures to decrease $f_c$ (Figure \ref{fig.6}a) is, for this example, 
+
+
+ \begin{figure}[!ht]
+\centering
+        \includegraphics[ width=100mm, height=85mm]{linkedProperties.eps}
+\caption{
+}
+\label{fig.9}
+\end{figure}
 
 \section{Conclusions}
 
