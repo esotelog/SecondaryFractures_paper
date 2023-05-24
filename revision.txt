@@ -1,0 +1,19 @@
+linear slip theory
+fc-> P-wave parte comleja (hallar el pico)
+
+adicionar en la eq 12 que la compliance es frequency dependence
+
+Cambiar la permeabilidad 100 D
+Figura 2: distancia media entre fractura secundarua
+
+Figure 4 : explicar el limite draine
+
+Figura 5 : Caso elasitco. Explicar que todos los casos poroelasticos tienden al caso elastico
+
+Explicar mejor como se consigui los resultados del caso elastico.
+
+Figuro 8. agregar fflechas
+
+Discusion:
+Limitaciones: Incidencia normal, fracturas normales, todas iguales, future 
+Klaus: reflectividad mayor que la esperada ... debido a fracture secundaria
