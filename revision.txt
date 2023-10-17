@@ -1,3 +1,28 @@
+
+new: German's corrections
+- Resolve: 
+1. Definition of Size of a fracture (fresnel zone?)
+In Abstract
+In introduction. After line 39 (German's revision)
+
+2. DONE Explain "characterized by correlated permeabilities" line p.2 42
+
+3. "larger than the dominant wavelength" (fresnel zone?). p.3 line 57
+
+4. DONE Add citation Rubino et al 2013 p4. line 99
+
+5. line 100 "a large macroscale fracture, larger than the prevailing wavelength"
+
+6. 2.3 line 244 
+Please start this subsection by clarifying that in this initial analysis we only consider normal incidence.
+
+-> discuss 7. p.15 line 353 Plots valid up to 100 Hz but presented up to 1000 KHz
+
+25/9: Beginning results.
+
+**********************************
+Done!
+
 linear slip theory
 fc-> P-wave parte comleja (hallar el pico)
 
